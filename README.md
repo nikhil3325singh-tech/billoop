@@ -1,7 +1,7 @@
 # Billoop
 
 > Professional Quotations, Inventory & GST Billing Platform for Electrical Contractors and Panel Builders.  
-> Developed and maintained by **[Focitech Pvt. Ltd.](https://focitech.in)**.
+> Live URL: **[https://billop.focitech.in](https://billop.focitech.in)** • Developed and maintained by **[Focitech Pvt. Ltd.](https://focitech.in)**.
 
 ---
 

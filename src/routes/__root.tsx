@@ -82,9 +82,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Billoop by Foci Tech Pvt. Ltd." },
       { name: "description", content: "Inventory, quotations and GST billing for electrical businesses." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://billop.focitech.in" },
+      { property: "og:title", content: "Billoop by Foci Tech Pvt. Ltd." },
+      { property: "og:description", content: "Inventory, quotations and GST billing for electrical businesses." },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "canonical", href: "https://billop.focitech.in" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" },

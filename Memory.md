@@ -22,9 +22,9 @@
   - Removed third-party tracking scripts, preview message brokers, and telemetry headers.
   - Replaced error reporting with clean development-gated logging via `src/lib/error-reporting.ts`.
   - Added explicit copyright and website references pointing to `focitech.in` and `support@focitech.in`.
-- Config / env: None required.
-- Known issues / TODO: None.
-- Last changed: 2026-10-05 - Cleared Lovable watermarks/telemetry and transferred complete branding & rights to focitech.in.
+- Config / env: `SITE_URL="https://billop.focitech.in"`, `VITE_SITE_URL="https://billop.focitech.in"`.
+- Known issues / TODO: Configure Supabase Auth Site URL and Redirect URLs for `https://billop.focitech.in/**`.
+- Last changed: 2026-10-11 - Configured custom domain `billop.focitech.in` across environment, OpenGraph, canonical links, and project metadata.
 
 ---
 
