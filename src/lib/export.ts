@@ -151,6 +151,15 @@ export async function downloadPdf(d: Doc, c: Company) {
   pdf.setDrawColor(150, 150, 150).setLineWidth(0.2).line(W - M - 45, sy + 22, W - M, sy + 22);
   pdf.text(c.signatoryName || "Authorised Signatory", W - M, sy + 26, { align: "right" });
 
+  // Document rights & attribution
+  pdf.setFont("helvetica", "normal").setFontSize(7).setTextColor(140, 140, 140);
+  pdf.text(
+    "Generated via Billoop • A Product of Focitech Pvt. Ltd. (focitech.in) • All rights reserved.",
+    W / 2,
+    290,
+    { align: "center" },
+  );
+
   pdf.save(fileName(d, "pdf"));
 }
 
@@ -259,6 +268,8 @@ export async function downloadWord(d: Doc, c: Company) {
   if (sigImgs.length) children.push(new Paragraph({ alignment: AlignmentType.RIGHT, children: sigImgs }));
   else children.push(p(""), p(""));
   children.push(p(c.signatoryName || "Authorised Signatory", { align: AlignmentType.RIGHT, bold: true }));
+  children.push(p(""));
+  children.push(p("Generated via Billoop • A Product of Focitech Pvt. Ltd. (focitech.in) • All rights reserved.", { align: AlignmentType.CENTER, size: 14, color: "888888" }));
 
   const doc = new Document({
     styles: { default: { document: { run: { font: "Calibri" } } } },

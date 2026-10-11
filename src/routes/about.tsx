@@ -70,7 +70,7 @@ const parentServices = [
   "Enterprise Digital Transformation & Consulting",
 ];
 
-export function AboutPage() {
+function AboutPage() {
   return (
     <SiteLayout>
       <div className="relative overflow-hidden">

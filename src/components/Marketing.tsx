@@ -275,7 +275,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           {/* Bottom Bar: Copyright & Compliance */}
           <div className="pt-8 border-t border-border/70 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
             <div>
-              © {new Date().getFullYear()} {COMPANY} All rights reserved.
+              © {new Date().getFullYear()} {COMPANY} (focitech.in). All rights reserved.
             </div>
             <div className="flex flex-wrap items-center gap-4">
               <Link to="/about" className="hover:text-primary transition-colors">

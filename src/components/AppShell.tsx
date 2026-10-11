@@ -23,10 +23,17 @@ const mainNav = [
   { to: "/company", label: "Company Template", icon: Building2 },
 ] as const;
 
-const accountNav = [
+interface AccountNavItem {
+  to: string;
+  label: string;
+  icon: typeof User;
+  badge?: string;
+}
+
+const accountNav: AccountNavItem[] = [
   { to: "/account", label: "My Account", icon: User },
   { to: "/plans", label: "My Plans", icon: CreditCard, badge: "Pro" },
-] as const;
+];
 
 export function initials(name: string) {
   return name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase() || "EC";
@@ -125,8 +132,16 @@ export function AppShell({ children }: { children: ReactNode }) {
             <LogOut className="size-4" />
             <span>Sign out</span>
           </button>
-          <div className="text-[10px] text-muted-foreground px-3">
-            Billoop by Foci Tech Pvt. Ltd.
+          <div className="text-[10px] text-muted-foreground px-3 leading-tight space-y-0.5">
+            <div>Billoop • Focitech Pvt. Ltd.</div>
+            <a
+              href="https://focitech.in"
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary hover:underline block"
+            >
+              focitech.in
+            </a>
           </div>
         </div>
       </aside>

@@ -155,7 +155,7 @@ export async function signUpUser({ email, password, fullName }: { email: string;
       password,
       options: {
         data: { full_name: fullName },
-        emailRedirectTo: typeof window !== "undefined" ? window.location.origin + "/dashboard" : undefined,
+        ...(typeof window !== "undefined" ? { emailRedirectTo: window.location.origin + "/dashboard" } : {}),
       },
     });
 

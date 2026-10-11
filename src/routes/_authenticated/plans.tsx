@@ -21,7 +21,7 @@ const billingHistory = [
   { id: "INV-B-2024-001", date: "01 Oct 2024", plan: "Starter Plan", amount: "₹0", status: "Free" },
 ];
 
-export function PlansPage() {
+function PlansPage() {
   const { items, docs } = useStore();
   const [currentPlan, setCurrentPlan] = useState<"Starter" | "Business" | "Enterprise">("Business");
   const [annual, setAnnual] = useState(true);

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/_authenticated/account")({
   component: AccountPage,
 });
 
-export function AccountPage() {
+function AccountPage() {
   const { session } = useSession();
   const { company } = useStore();
 
