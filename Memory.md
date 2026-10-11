@@ -49,21 +49,22 @@
 - Status: done
 - Purpose: User authentication and session persistence for cloud accounts with local storage fallback.
 - Files:
+  - `src/components/AuthForm.tsx`
+  - `src/lib/auth.tsx`
   - `src/integrations/supabase/client.ts`
   - `src/integrations/supabase/client.server.ts`
   - `src/integrations/supabase/auth-middleware.ts`
   - `src/integrations/supabase/cron-auth.ts`
-  - `src/lib/auth.tsx`
   - `supabase/migrations/20261005_init_schema.sql`
 - Behavior / key decisions:
-  - Replaced preview postMessage iframe broker with standard browser `localStorage`.
-  - Cleared external cloud-auth dependencies from `package.json`.
-  - Updated cron authorization to rely on standard `CRON_SECRET`.
-  - Handled strict optional property types for auth sign up flows.
+  - Removed mock Google OAuth, preset demo accounts, and unused modal dialogs in favor of clean, direct email/password authentication.
+  - Deleted legacy unreferenced `src/integrations/lovable` module to remove `@lovable.dev/cloud-auth-js` traces.
+  - Implemented trimmed field validation, minimum 6 character password enforcement, and spinner button states during auth submission.
+  - Kept Supabase cloud session persistence with seamless browser local storage fallback.
   - Provided comprehensive PostgreSQL migration script with full Row Level Security (RLS), cascading foreign keys, performance indexes, and automatic onboarding triggers (`handle_new_user`).
-- Config / env: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`.
+- Config / env: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`, `SITE_URL`.
 - Known issues / TODO: Execute the SQL script in Supabase Dashboard SQL Editor for project `axfdafqlbvaiadslkanr`.
-- Last changed: 2026-10-05 - Generated initial Supabase SQL schema migration with RLS, triggers, and seed data.
+- Last changed: 2026-10-11 - Removed Google OAuth mocks and hardened AuthForm for production email/password login.
 
 ---
 
